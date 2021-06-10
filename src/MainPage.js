@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 export default function MainPage() {
-    const [selectedId, setSelectedId] = useState(1);
+    const [selectedId, setSelectedId] = useState(-1);
 
 
     return (
@@ -12,7 +12,7 @@ export default function MainPage() {
                         Каталог марок
                     </div>
 
-                    <div style={{}} className="manufacturer-card mercedes-card">
+                    <div onClick={() => { setSelectedId(1) }} style={{}} className="manufacturer-card mercedes-card">
                         <div className="row center-items manuf-title">
                             Mercedes-Benz
                         </div>
