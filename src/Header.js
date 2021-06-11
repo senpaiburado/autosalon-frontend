@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Header() {
+export default function Header(props) {
 
     return (
         <div id="header">
@@ -13,7 +13,7 @@ export default function Header() {
                         <img class="hdr-img" src="https://image.flaticon.com/icons/png/512/741/741460.png" width="35px" height="45px" />
                     </a>
                     <div class="hdr-sep"></div>
-                    <a class="hdr-link" href="/cart">Профіль</a>
+                    <a onClick={() => { console.log("test"); props.setAboutUs(true) }} href="#" class="hdr-link">Про нас</a>
                     <div></div>
                 </div>
                 <div id="hdr-title-block" class="row flex-1">

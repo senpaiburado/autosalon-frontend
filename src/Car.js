@@ -1,13 +1,16 @@
 import React from "react";
 import { FaTachometerAlt, GiCarSeat, FaCar, FaClock, FaParking, FaGasPump } from "react-icons/all"
+import { Input } from 'react-nice-inputs'
 
 export default function Car(props) {
 
     return (
         <div className="col">
-            <div style={{}} className="col manufacturer-card mercedes-card">
+            <div style={{
+                    backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(http://localhost:1337" + props.Image.url + ")"
+                }} className="col manufacturer-card">
                 <div className="row center-items manuf-title">
-                    Mercedes-Benz E220
+                    {props.Name}
                 </div>
                 <div style={{ height: "70%" }}></div>
                 <div style={{background: "rgba(0, 0, 0, 0.75)", height: "30%"}} className="col center-items">
@@ -15,38 +18,40 @@ export default function Car(props) {
                         <div className=" " style={{color: "white", fontSize: "30px"}}>
                             <FaCar />
                             &nbsp;
-                            2.2л
+                            {props.Engine} куб. см
                         </div>
                         <div style={{color: "white", fontSize: "30px"}}>
                             <GiCarSeat />
                             &nbsp;
-                            5
+                            {props.Chairs}
                         </div>
                         <div style={{color: "white", fontSize: "30px"}}>
                             <FaTachometerAlt />
                             &nbsp;
-                            240 км/год
+                            {props.MaxSpeed} км/год
                         </div>
                     </div>
                     <div className="row spc-between" style={{ width: "50%", height: "30%" }}>
                         <div style={{color: "white", fontSize: "30px"}}>
                             <FaClock />
                             &nbsp;
-                            6.4 с
+                            {props.TimeTo100} с
                         </div>
                         <div style={{color: "white", fontSize: "30px"}}>
                             <FaParking />
                             &nbsp;
-                            АКПП 7-G Tronic
+                            {props.Gear}
                         </div>
                         <div style={{color: "white", fontSize: "30px"}}>
                             <FaGasPump />
                             &nbsp;
-                            6.2л/100км
+                            {props.FuelPer100}л/100км
                         </div>
                     </div>
                     <div className="row center-items" style={{ width: "50%", height: "30%" }}>
-                        <a className="select-btn" href="#">Обрати</a>
+                        <input placeholder="Ім'я" style={{height: 30, marginLeft: 10}}></input>
+                        <input placeholder="Телефон" style={{height: 30, marginLeft: 10}} ></input>
+                        <a onClick={() => { window.location.reload() }} className="select-btn" href="#">Обрати</a>
                     </div>
                 </div>
             </div>
